@@ -1,0 +1,34 @@
+{
+	"extName": {
+		"message": "Meeting URL Extractor on Calendar",
+		"description": "Extension name."
+	},
+	"extDescription": {
+		"message": "Copies only the Google Meet URL from Google Calendar without any extra information by right-clicking once.",
+		"description": "Extension description."
+	},
+	"toastTitleSuccess": {
+		"message": "Copy successed!",
+		"description": "Title of toast when copy succeeded."
+	},
+	"toastDescriptionSuccess": {
+		"message": "Copied the URL to the clipboard.",
+		"description": "Description of toast when copy succeeded."
+	},
+	"toastTitleFailure": {
+		"message": "Copy failed!",
+		"description": "Title of toast when copy succeeded."
+	},
+	"toastDescriptionFailure": {
+		"message": "This window may not be focused. Focus on this window and try again.",
+		"description": "Description of toast when copy succeeded."
+	},
+	"popupDescription": {
+		"message": "Right-click on the event cell on the calendar or on the \"Join with Google Meet\" button to copy only the Google Meet URL to the clipboard.",
+		"description": "Popup description."
+	},
+	"sns": {
+		"message": "Developer's SNS accounts (only Japanese): ",
+		"description": "Developer's SNS accounts."
+	}
+}

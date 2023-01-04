@@ -1,0 +1,52 @@
+body {
+  width: 400px;
+  font-size: 0.8rem;
+  font-family: TsukuARdGothic-Bold, "Zen Maru Gothic", Helvetica, 游ゴシック体, "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;
+  color: #444444;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin: 0.3rem;
+  border-bottom: 1px solid #cccccc;
+  padding: 0.6rem;
+}
+
+.icon {
+  margin: 0.6rem;
+}
+
+.icon-img{
+  width: 2.5rem;
+}
+
+.ext-name {
+  margin: 0.6rem;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
+.popup-description {
+  margin: 0.3rem;
+  border-bottom: 1px solid #cccccc;
+  padding: 0.9rem;
+}
+
+.sns {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0.6rem;
+}
+
+.sns-accounts {
+  margin: 0.6rem;
+}
+
+.sns-img {
+  margin: 0.4rem;
+  width: 2rem;
+}

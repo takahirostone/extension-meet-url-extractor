@@ -1,0 +1,34 @@
+{
+	"extName": {
+		"message": "カレンダーで会議のURLだけコピー",
+		"description": "Extension name."
+	},
+	"extDescription": {
+		"message": "右クリック1回でGoogleカレンダーから余分な情報を除いてGoogle MeetのURLだけをコピーします。",
+		"description": "Extension description."
+	},
+	"toastTitleSuccess": {
+		"message": "コピー成功！",
+		"description": "Title of toast when copy succeeded."
+	},
+	"toastDescriptionSuccess": {
+		"message": "URLをクリップボードにコピーしました。",
+		"description": "Description of toast when copy succeeded."
+	},
+	"toastTitleFailure": {
+		"message": "コピー失敗！",
+		"description": "Title of toast when copy succeeded."
+	},
+	"toastDescriptionFailure": {
+		"message": "ウィンドウにフォーカスが当たっていない場合は、フォーカスを当てて再度右クリックしてください。",
+		"description": "Description of toast when copy succeeded."
+	},
+	"popupDescription": {
+		"message": "カレンダー上の予定のセル もしくは 「Google Meetに参加する」ボタンを右クリックすると、Google MeetのURLのみをクリップボードにコピーします。",
+		"description": "Popup description."
+	},
+	"sns": {
+		"message": "開発者SNSアカウント: ",
+		"description": "Developer's SNS accounts."
+	}
+}
