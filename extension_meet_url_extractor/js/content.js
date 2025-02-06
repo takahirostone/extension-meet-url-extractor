@@ -1,15 +1,10 @@
 document.addEventListener("contextmenu", function(event) {
 
     let element = event.target;
-    if(element.className.match(/(uqM3cb|w1OTme)/)) {  //"Join with Google Meet" buttons. "uqM3cb" buttones are where you create or edit an event. "w1OTme" buttons are where you see details of your event.
+    if(element.className.match(/UywwFc-mRLv6 UywwFc-RLmnJb/)) {  //"Join with Google Meet" buttons. "uqM3cb" buttones are where you create or edit an event. "w1OTme" buttons are where you see details of your event.
     	element = element;
     } else {
-	    while(!element.className.match(/NlL62b\sEfQccc\selYzab-cXXICe-Hjleke/)) {  //Event cells on the calendar view.
-	    	element = element.parentNode;
-	    	if(element === window.document) {
-	    		return;
-	    	}
-	    }
+	    return;
     }
 
     const html = element.outerHTML;
