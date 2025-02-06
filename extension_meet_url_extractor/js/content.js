@@ -1,20 +1,55 @@
 document.addEventListener("contextmenu", function(event) {
 
+	let url;
     let element = event.target;
     if(element.className.match(/UywwFc-mRLv6 UywwFc-RLmnJb/)) {  //"Join with Google Meet" buttons. "uqM3cb" buttones are where you create or edit an event. "w1OTme" buttons are where you see details of your event.
-    	element = element;
+    	const html = element.outerHTML;
+    	if(html.match(/https:\/\/meet\.google\.com\/[a-z]{3}-[a-z]{4}-[a-z]{3}/)) {
+			url = html.match(/https:\/\/meet\.google\.com\/[a-z]{3}-[a-z]{4}-[a-z]{3}/)[0];
+		} else {
+			return;
+		}
     } else {
-	    return;
-    }
+	    while(!element.className.match(/GTG3wb ChfiMc rFUW1c EiZ8Dd/)) {  //Event cells on the calendar view.
+	    	element = element.parentNode;
+	    	if(element === window.document) {
+	    		return;
+	    	}
+	    }
+	    const eventId = element.getAttribute('data-eventid');
+	    const eventUrl = 'https://www.google.com/calendar/event?eid=' + eventId;
+	    const sliceEventUrl = eventUrl.slice(0, 75);
+	    const html = document.body.innerHTML;
+	    const targetStr = html.match(/<script type="application\/json" id="initialdata" nonce="">[\s\S]*?<\/script>/)[0];
+	    const arrStr = targetStr.replaceAll('<script type="application/json" id="initialdata" nonce="">', '').replaceAll('</script>', '');
+	    const arr = JSON.parse(arrStr);
 
-    const html = element.outerHTML;
-	let suffix;
-	if(html.match(/[a-z]{3}-[a-z]{4}-[a-z]{3}/)) {
-		suffix = html.match(/[a-z]{3}-[a-z]{4}-[a-z]{3}/)[0];
-	} else {
-		return;
-	}
-	const url = "https://meet.google.com/" + suffix;
+	    function findUrlContainingArray(arr) {
+		    let targetArr = null;
+		    for(const item of arr) {
+		        if(Array.isArray(item)) {
+		            const found = findUrlContainingArray(item);
+		            if (found) return found; // 最初に見つかったら即終了
+		        }
+		    }
+
+		    if(arr.some(item => typeof item === 'string' && item.includes(sliceEventUrl))) {
+		        return arr;
+		    }
+
+		    return targetArr;
+		}
+
+		const targetArr = findUrlContainingArray(arr);
+		console.log(targetArr);
+
+		url = targetArr.find(item => typeof item === 'string' && item.match(/https:\/\/meet\.google\.com\/[a-z]{3}-[a-z]{4}-[a-z]{3}/)) || null;
+
+		if(!url) {
+			return;
+		}
+
+    }
 
 	toastr.options = {
 	  "closeButton": true,
