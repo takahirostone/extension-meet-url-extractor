@@ -41,7 +41,6 @@ document.addEventListener("contextmenu", function(event) {
 		}
 
 		const targetArr = findUrlContainingArray(arr);
-		console.log(targetArr);
 
 		url = targetArr.find(item => typeof item === 'string' && item.match(/https:\/\/meet\.google\.com\/[a-z]{3}-[a-z]{4}-[a-z]{3}/)) || null;
 
